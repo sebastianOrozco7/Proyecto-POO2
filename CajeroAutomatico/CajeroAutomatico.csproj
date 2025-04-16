@@ -48,6 +48,7 @@
     <Compile Include="MODELO\ConexionDB.cs" />
     <Compile Include="MODELO\ConsultaDal.cs" />
     <Compile Include="MODELO\IngredoDAL.cs" />
+    <Compile Include="MODELO\IniciarSesionDAL.cs" />
     <Compile Include="MODELO\RegistroDal.cs" />
     <Compile Include="VISTA\RegistrarForm.cs">
       <SubType>Form</SubType>

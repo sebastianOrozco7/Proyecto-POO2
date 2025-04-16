@@ -28,14 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OpcionesUsuarioForm));
             this.grpOpciones = new System.Windows.Forms.GroupBox();
             this.btnDepositar = new System.Windows.Forms.Button();
             this.btnRetirar = new System.Windows.Forms.Button();
             this.btnConsultarSaldo = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.LblSaldoDisponible = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.grpOpciones.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // grpOpciones
@@ -84,6 +89,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.LblSaldoDisponible);
             this.panel1.Location = new System.Drawing.Point(251, 43);
             this.panel1.Name = "panel1";
@@ -93,11 +101,44 @@
             // LblSaldoDisponible
             // 
             this.LblSaldoDisponible.AutoSize = true;
-            this.LblSaldoDisponible.Location = new System.Drawing.Point(157, 61);
+            this.LblSaldoDisponible.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblSaldoDisponible.Location = new System.Drawing.Point(221, 240);
             this.LblSaldoDisponible.Name = "LblSaldoDisponible";
-            this.LblSaldoDisponible.Size = new System.Drawing.Size(55, 13);
+            this.LblSaldoDisponible.Size = new System.Drawing.Size(36, 26);
             this.LblSaldoDisponible.TabIndex = 0;
-            this.LblSaldoDisponible.Text = "$$$$$$$$";
+            this.LblSaldoDisponible.Text = "$0";
+            this.LblSaldoDisponible.Click += new System.EventHandler(this.LblSaldoDisponible_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(161, 52);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(155, 122);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(172, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(144, 28);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Innova Bank";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label2.Location = new System.Drawing.Point(157, 196);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(159, 22);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Su saldo actual es:";
             // 
             // OpcionesUsuarioForm
             // 
@@ -112,6 +153,7 @@
             this.grpOpciones.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -124,5 +166,8 @@
         private System.Windows.Forms.Button btnConsultarSaldo;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label LblSaldoDisponible;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label2;
     }
 }

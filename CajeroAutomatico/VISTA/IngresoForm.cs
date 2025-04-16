@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CajeroAutomatico.MODELO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,9 +16,17 @@ namespace CajeroAutomatico.VISTA
             InitializeComponent();
         }
 
-        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
+            IniciarSesionDAL iniciarSesion = new IniciarSesionDAL();
+            iniciarSesion.InicioSesion(txbUsuario, txbContraseña);
+            LimpiarCampos();
+        }
 
+        public void LimpiarCampos()
+        {
+            txbUsuario.Clear();
+            txbContraseña.Clear();
         }
     }
 }

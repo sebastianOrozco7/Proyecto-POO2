@@ -44,12 +44,12 @@
             this.txtCorreo = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txbTipoCuenta = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txbContraseña = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.label2 = new System.Windows.Forms.Label();
-            this.txbTipoCuenta = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -218,28 +218,46 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del usuario";
             // 
+            // txbTipoCuenta
+            // 
+            this.txbTipoCuenta.Location = new System.Drawing.Point(386, 214);
+            this.txbTipoCuenta.Name = "txbTipoCuenta";
+            this.txbTipoCuenta.Size = new System.Drawing.Size(140, 29);
+            this.txbTipoCuenta.TabIndex = 30;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(276, 222);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(104, 16);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "TIPO DE CUENTA:";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(375, 206);
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(292, 176);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 22);
+            this.label1.Size = new System.Drawing.Size(88, 16);
             this.label1.TabIndex = 28;
-            this.label1.Text = "Contraseña";
+            this.label1.Text = "CONTRASEÑA:";
             // 
             // txbContraseña
             // 
-            this.txbContraseña.Location = new System.Drawing.Point(379, 245);
+            this.txbContraseña.Location = new System.Drawing.Point(386, 168);
             this.txbContraseña.Name = "txbContraseña";
-            this.txbContraseña.Size = new System.Drawing.Size(100, 29);
+            this.txbContraseña.Size = new System.Drawing.Size(140, 29);
             this.txbContraseña.TabIndex = 27;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(518, 230);
+            this.pictureBox1.Location = new System.Drawing.Point(90, 214);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(106, 86);
+            this.pictureBox1.Size = new System.Drawing.Size(123, 102);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 26;
             this.pictureBox1.TabStop = false;
@@ -249,23 +267,7 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(196, 206);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 22);
-            this.label2.TabIndex = 29;
-            this.label2.Text = "Tipo de cuenta";
-            // 
-            // txbTipoCuenta
-            // 
-            this.txbTipoCuenta.Location = new System.Drawing.Point(200, 231);
-            this.txbTipoCuenta.Name = "txbTipoCuenta";
-            this.txbTipoCuenta.Size = new System.Drawing.Size(100, 29);
-            this.txbTipoCuenta.TabIndex = 30;
-            // 
-            // Registrar
+            // RegistrarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -274,7 +276,7 @@
             this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Registrar";
+            this.Name = "RegistrarForm";
             this.Text = "Registrar";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

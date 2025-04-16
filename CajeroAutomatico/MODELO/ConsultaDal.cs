@@ -14,31 +14,7 @@ namespace CajeroAutomatico.MODELO
     {
         Cuenta cuenta = new Cuenta();
         ConexionDB conexionDB = new ConexionDB();
-        /*public void ConsultarSaldo()
-        {
-             cuenta.IdUsuario = 1104546039;
-
-            using(SqlConnection conexion = conexionDB.AbrirConexion())
-            {
-                string Query = "SELECT Saldo FROM Cuentas WHERE IdUsuario = @idusuario";
-
-                using(SqlCommand comando = new SqlCommand(Query,conexion))
-                {
-                    comando.Parameters.AddWithValue("idusuario",cuenta.IdUsuario);
-
-                    object resultado = comando.ExecuteScalar(); // Trae solo un valor
-
-                    if (resultado != null)
-                    {
-                        LblSaldo.Text = "$ " + resultado.ToString();
-                    }
-                    else
-                    {
-                        LblSaldo.Text = "Cuenta no encontrada";
-                    }
-                }
-            }*/
-
+        
         public string ConsultarSaldo(int idUsuario)
         {
             

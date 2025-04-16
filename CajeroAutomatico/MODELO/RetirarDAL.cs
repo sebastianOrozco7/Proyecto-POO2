@@ -50,19 +50,27 @@ namespace CajeroAutomatico.MODELO
 
                             ComandoUpdate.ExecuteNonQuery();
                         }
-                        MessageBox.Show("Retiro Exitoso" + "Exito" + MessageBoxButtons.OK + MessageBoxIcon.Information);
+                        MessageBox.Show("Retiro Exitoso","Exito",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     }
                     else
                     {
-                        MessageBox.Show("Saldo Insuficiente" + "Error" + MessageBoxButtons.OK + MessageBoxIcon.Warning);
+                        MessageBox.Show("Saldo Insuficiente","Error",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                     }
                 }
             }
-            catch (FormatException)
+            catch (SqlException sqlEx)
             {
-                MessageBox.Show("ERROR DE FORMATO"+"Error"+ MessageBoxButtons.OK+MessageBoxIcon.Warning);
+                MessageBox.Show($"Error en la base de datos: {sqlEx.Message}", "Error de base de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+            catch (FormatException formatEx)
+            {
+                MessageBox.Show($"Error de formato: {formatEx.Message}", "Valor ingresado incorrectamente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show($"Error inesperado: {Ex.Message}", "Error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
     }
 }

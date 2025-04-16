@@ -21,8 +21,8 @@ namespace CajeroAutomatico.VISTA
         ConsultaDal consultaDal = new ConsultaDal();
         private void btnConsultarSaldo_Click(object sender, EventArgs e)
         {
-            
-            string saldo = consultaDal.ConsultarSaldo(1104546039);
+            //IniciarSesionDAL iniciarSesionDAL = new IniciarSesionDAL();
+            string saldo = consultaDal.ConsultarSaldo(110546039);
             LblSaldoDisponible.Text = saldo;
         }
 
@@ -38,6 +38,11 @@ namespace CajeroAutomatico.VISTA
         {
             ConsignarForm consignarform = new ConsignarForm();
             consignarform.Show();
+        }
+
+        private void LblSaldoDisponible_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
