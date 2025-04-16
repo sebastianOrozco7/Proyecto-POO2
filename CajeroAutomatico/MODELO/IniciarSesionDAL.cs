@@ -15,21 +15,22 @@ namespace CajeroAutomatico.MODELO
 
         ConexionDB conexionDB = new ConexionDB();
         Usuario usuario = new Usuario();
-
+        ConsultaDal consultaDal = new ConsultaDal();
+        
         public void InicioSesion(TextBox txbUsuario, TextBox txbContraseña)
         {
             try
             {
                 using (SqlConnection conexion = conexionDB.AbrirConexion())
                 {
-                    usuario.NumeroDocumento = Convert.ToInt32(txbUsuario.Text);
+                    DatoSesion.NumeroDocumento = Convert.ToInt32(txbUsuario.Text);
                     usuario.Contraseña = Convert.ToInt32(txbContraseña.Text);
 
                     string Query = "SELECT COUNT(*) FROM Usuario WHERE NumeroDocumento = @usuario AND Contraseña = @contraseña";
 
                     using (SqlCommand comando = new SqlCommand(Query, conexion))
                     {
-                        comando.Parameters.AddWithValue("@usuario", usuario.NumeroDocumento);
+                        comando.Parameters.AddWithValue("@usuario", DatoSesion.NumeroDocumento);
                         comando.Parameters.AddWithValue("@contraseña", usuario.Contraseña);
 
                         int Cuenta = (int)comando.ExecuteScalar();

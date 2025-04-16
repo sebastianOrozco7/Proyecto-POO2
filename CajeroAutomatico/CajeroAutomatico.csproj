@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CONTROLADOR\Cuenta.cs" />
+    <Compile Include="CONTROLADOR\DatoSesion.cs" />
     <Compile Include="CONTROLADOR\Usuario.cs" />
     <Compile Include="MODELO\ConexionDB.cs" />
     <Compile Include="MODELO\ConsultaDal.cs" />

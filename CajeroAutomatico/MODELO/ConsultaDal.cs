@@ -32,6 +32,8 @@ namespace CajeroAutomatico.MODELO
                         return "Cuenta no encontrada";
                 }
             }
+
+           
         }
 
 

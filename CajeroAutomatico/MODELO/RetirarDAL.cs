@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CajeroAutomatico.CONTROLADOR;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -18,15 +19,15 @@ namespace CajeroAutomatico.MODELO
             {
                 using (SqlConnection conexion = conexionDB.AbrirConexion())
                 {
-                    string QuerySelect = "select Saldo From CUENTAS where IdUsuario = @idusuario";
+                    string QuerySelect = "SELECT Saldo FROM Cuentas WHERE IdUsuario = @idusuario";
 
-                    int IdUsuario = 1104546039;
+                    //int IdUsuario = 1104546039;
                     int SaldoUsuario = 0;
                     int NuevoSaldo = 0;
 
                     using (SqlCommand ComandoSelect = new SqlCommand(QuerySelect, conexion))
                     {
-                        ComandoSelect.Parameters.AddWithValue("@idusuario", IdUsuario);
+                        ComandoSelect.Parameters.AddWithValue("@idusuario", DatoSesion.NumeroDocumento);
                         object valor = ComandoSelect.ExecuteScalar();
 
                         if (valor != null)
@@ -46,7 +47,7 @@ namespace CajeroAutomatico.MODELO
                         using (SqlCommand ComandoUpdate = new SqlCommand(QueryUpdate, conexion))
                         {
                             ComandoUpdate.Parameters.AddWithValue("@NuevoSaldo", NuevoSaldo);
-                            ComandoUpdate.Parameters.AddWithValue("@IdUsuario", IdUsuario);
+                            ComandoUpdate.Parameters.AddWithValue("@IdUsuario", DatoSesion.NumeroDocumento);
 
                             ComandoUpdate.ExecuteNonQuery();
                         }
