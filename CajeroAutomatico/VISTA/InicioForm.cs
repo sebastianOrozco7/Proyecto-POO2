@@ -24,7 +24,7 @@ namespace CajeroAutomatico
 
         private void btnUsuario_Click(object sender, EventArgs e)
         {
-            IngresoForm ingreso = new IngresoForm();
+            IniciarSesionForm ingreso = new IniciarSesionForm();
             ingreso.Show();
         }
     }

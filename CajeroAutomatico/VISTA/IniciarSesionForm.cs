@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace CajeroAutomatico.VISTA
 {
-    public partial class IngresoForm : Form
+    public partial class IniciarSesionForm : Form
     {
-        public IngresoForm()
+        public IniciarSesionForm()
         {
             InitializeComponent();
         }

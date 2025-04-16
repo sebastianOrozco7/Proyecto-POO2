@@ -21,7 +21,6 @@ namespace CajeroAutomatico.MODELO
                 {
                     string QuerySelect = "SELECT Saldo FROM Cuentas WHERE IdUsuario = @idusuario";
 
-                    //int IdUsuario = 1104546039;
                     int SaldoUsuario = 0;
                     int NuevoSaldo = 0;
 

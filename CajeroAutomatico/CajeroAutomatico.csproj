@@ -48,7 +48,6 @@
     <Compile Include="CONTROLADOR\Usuario.cs" />
     <Compile Include="MODELO\ConexionDB.cs" />
     <Compile Include="MODELO\ConsultaDal.cs" />
-    <Compile Include="MODELO\IngredoDAL.cs" />
     <Compile Include="MODELO\IniciarSesionDAL.cs" />
     <Compile Include="MODELO\RegistroDal.cs" />
     <Compile Include="VISTA\RegistrarForm.cs">
@@ -78,11 +77,11 @@
     <Compile Include="VISTA\RetirarForm.Designer.cs">
       <DependentUpon>RetirarForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="VISTA\IngresoForm.cs">
+    <Compile Include="VISTA\IniciarSesionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VISTA\IngresoForm.Designer.cs">
-      <DependentUpon>IngresoForm.cs</DependentUpon>
+    <Compile Include="VISTA\IniciarSesionForm.Designer.cs">
+      <DependentUpon>IniciarSesionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="VISTA\OpcionesUsuarioForm.cs">
       <SubType>Form</SubType>
@@ -112,8 +111,8 @@
     <EmbeddedResource Include="VISTA\RetirarForm.resx">
       <DependentUpon>RetirarForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VISTA\IngresoForm.resx">
-      <DependentUpon>IngresoForm.cs</DependentUpon>
+    <EmbeddedResource Include="VISTA\IniciarSesionForm.resx">
+      <DependentUpon>IniciarSesionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VISTA\OpcionesUsuarioForm.resx">
       <DependentUpon>OpcionesUsuarioForm.cs</DependentUpon>
