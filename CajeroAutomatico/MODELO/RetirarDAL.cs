@@ -26,7 +26,7 @@ namespace CajeroAutomatico.MODELO
 
                     using (SqlCommand ComandoSelect = new SqlCommand(QuerySelect, conexion))
                     {
-                        ComandoSelect.Parameters.AddWithValue("@idusuario", DatoSesion.NumeroDocumento);
+                        ComandoSelect.Parameters.AddWithValue("@idusuario", DatosGlobales.NumeroDocumento);
                         object valor = ComandoSelect.ExecuteScalar();
 
                         if (valor != null)
@@ -46,7 +46,7 @@ namespace CajeroAutomatico.MODELO
                         using (SqlCommand ComandoUpdate = new SqlCommand(QueryUpdate, conexion))
                         {
                             ComandoUpdate.Parameters.AddWithValue("@NuevoSaldo", NuevoSaldo);
-                            ComandoUpdate.Parameters.AddWithValue("@IdUsuario", DatoSesion.NumeroDocumento);
+                            ComandoUpdate.Parameters.AddWithValue("@IdUsuario", DatosGlobales.NumeroDocumento);
 
                             ComandoUpdate.ExecuteNonQuery();
                         }

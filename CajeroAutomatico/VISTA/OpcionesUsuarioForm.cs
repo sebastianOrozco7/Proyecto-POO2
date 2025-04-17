@@ -21,7 +21,7 @@ namespace CajeroAutomatico.VISTA
         ConsultaDal consultaDal = new ConsultaDal();
         private void btnConsultarSaldo_Click(object sender, EventArgs e)
         {
-            string saldo = consultaDal.ConsultarSaldo(DatoSesion.NumeroDocumento);
+            string saldo = consultaDal.ConsultarSaldo(DatosGlobales.NumeroDocumento);
             LblSaldoDisponible.Text = saldo;
         }
 

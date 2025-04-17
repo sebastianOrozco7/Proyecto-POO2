@@ -1,6 +1,7 @@
 ﻿using CajeroAutomatico.CONTROLADOR;
 using CajeroAutomatico.VISTA;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -29,21 +30,32 @@ namespace CajeroAutomatico.MODELO
                     usuario.TipoCuenta = txbTipoCuenta.Text;
                     usuario.Contraseña = Convert.ToInt32(txbContraseña.Text);
 
-                    string query = "INSERT INTO Usuario (Nombre, Apellido, Correo, Telefono, TipoDocumento,TipoCuenta,NumeroDocumento,Contraseña) " +
+                    string QueryUsuario = "INSERT INTO Usuario (Nombre, Apellido, Correo, Telefono, TipoDocumento,TipoCuenta,NumeroDocumento,Contraseña) " +
                                    "VALUES (@Nombre, @Apellido,@Correo,@Telefono,@TipoDocumento,@TipoCuenta,@NumeroDocumento,@Contraseña)";
 
-                    using (SqlCommand cmd = new SqlCommand(query, conexion))
+                    using (SqlCommand comando = new SqlCommand(QueryUsuario, conexion))
                     {
-                        cmd.Parameters.AddWithValue("@Nombre", usuario.Nombre);
-                        cmd.Parameters.AddWithValue("@Apellido", usuario.Apellido);
-                        cmd.Parameters.AddWithValue("@Correo", usuario.Correo);
-                        cmd.Parameters.AddWithValue("@Telefono", usuario.Telefono);
-                        cmd.Parameters.AddWithValue("@TipoDocumento", usuario.TipoDocumento);
-                        cmd.Parameters.AddWithValue("@TipoCuenta", usuario.TipoCuenta);
-                        cmd.Parameters.AddWithValue("@NumeroDocumento", usuario.NumeroDocumento);
-                        cmd.Parameters.AddWithValue("@Contraseña", usuario.Contraseña);
-                        cmd.ExecuteNonQuery();
+                        comando.Parameters.AddWithValue("@Nombre", usuario.Nombre);
+                        comando.Parameters.AddWithValue("@Apellido", usuario.Apellido);
+                        comando.Parameters.AddWithValue("@Correo", usuario.Correo);
+                        comando.Parameters.AddWithValue("@Telefono", usuario.Telefono);
+                        comando.Parameters.AddWithValue("@TipoDocumento", usuario.TipoDocumento);
+                        comando.Parameters.AddWithValue("@TipoCuenta", usuario.TipoCuenta);
+                        comando.Parameters.AddWithValue("@NumeroDocumento", usuario.NumeroDocumento);
+                        comando.Parameters.AddWithValue("@Contraseña", usuario.Contraseña);
+                        comando.ExecuteNonQuery();
                     }
+                   
+
+                    string QueryCuentas = "INSERT INTO Cuentas (IdUsuario, TipoCuenta, Saldo) VALUES (@idusuario,@tipocuenta,@saldo)";
+                    using (SqlCommand comando = new SqlCommand(QueryCuentas, conexion))
+                    {
+                        comando.Parameters.AddWithValue("@idusuario", usuario.NumeroDocumento);
+                        comando.Parameters.AddWithValue("@tipocuenta", usuario.TipoCuenta);
+                        comando.Parameters.AddWithValue("@saldo", 0);
+                        comando.ExecuteNonQuery();
+                    }
+
                     MessageBox.Show("Registro Exitoso", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }

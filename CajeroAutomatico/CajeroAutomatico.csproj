@@ -44,12 +44,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CONTROLADOR\Cuenta.cs" />
-    <Compile Include="CONTROLADOR\DatoSesion.cs" />
+    <Compile Include="CONTROLADOR\DatosGlobales.cs" />
     <Compile Include="CONTROLADOR\Usuario.cs" />
     <Compile Include="MODELO\ConexionDB.cs" />
+    <Compile Include="MODELO\ConsignarDAL.cs" />
     <Compile Include="MODELO\ConsultaDal.cs" />
     <Compile Include="MODELO\IniciarSesionDAL.cs" />
     <Compile Include="MODELO\RegistroDal.cs" />
+    <Compile Include="VISTA\ConsignarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VISTA\ConsignarForm.Designer.cs">
+      <DependentUpon>ConsignarForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="VISTA\RegistrarForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +96,9 @@
     <Compile Include="VISTA\OpcionesUsuarioForm.Designer.cs">
       <DependentUpon>OpcionesUsuarioForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="VISTA\ConsignarForm.resx">
+      <DependentUpon>ConsignarForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VISTA\RegistrarForm.resx">
       <DependentUpon>RegistrarForm.cs</DependentUpon>
     </EmbeddedResource>

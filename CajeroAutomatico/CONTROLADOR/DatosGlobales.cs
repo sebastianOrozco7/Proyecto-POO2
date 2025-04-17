@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CajeroAutomatico.CONTROLADOR
 {
-    public static class DatoSesion
+    public static class DatosGlobales
     {
         public static int NumeroDocumento { get; set; }
     }

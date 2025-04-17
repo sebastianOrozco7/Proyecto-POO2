@@ -23,14 +23,14 @@ namespace CajeroAutomatico.MODELO
             {
                 using (SqlConnection conexion = conexionDB.AbrirConexion())
                 {
-                    DatoSesion.NumeroDocumento = Convert.ToInt32(txbUsuario.Text);
+                    DatosGlobales.NumeroDocumento = Convert.ToInt32(txbUsuario.Text);
                     usuario.Contraseña = Convert.ToInt32(txbContraseña.Text);
 
                     string Query = "SELECT COUNT(*) FROM Usuario WHERE NumeroDocumento = @usuario AND Contraseña = @contraseña";
 
                     using (SqlCommand comando = new SqlCommand(Query, conexion))
                     {
-                        comando.Parameters.AddWithValue("@usuario", DatoSesion.NumeroDocumento);
+                        comando.Parameters.AddWithValue("@usuario", DatosGlobales.NumeroDocumento);
                         comando.Parameters.AddWithValue("@contraseña", usuario.Contraseña);
 
                         int Cuenta = (int)comando.ExecuteScalar();
